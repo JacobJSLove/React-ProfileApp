@@ -13,7 +13,7 @@ import ShowProfile from './profile/ShowProfile';
 
 const App = () => {
     return (
-        <div className="ui container">
+        <div className="container__wrapper">
 			<Router history={history}>
 				<Switch>
 					<Route path="/" exact component={ShowProfile} />

@@ -1,0 +1,46 @@
+.comments {
+    margin-top: 1em;
+    background: #FFFFFF;
+    box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.50);
+    border-radius: 5px 5px 0 0;
+    overflow: auto;
+    display: flex;
+    z-index: 1;
+    flex-flow: column;
+
+    &__input-wrapper {
+        position: absolute;
+        display: flex;
+        width: calc(100% - 2.5em);
+        box-sizing: border-box;
+        box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.50);
+        top: 100%;
+
+        & input {
+            margin: 1.625em 2.125em 1.250em 1.625em;
+            border: none;
+            font-family: Montserrat-Regular;
+            font-size: 1.125em;
+            color: #8298B9;
+            letter-spacing: 0;
+            outline: none;
+            flex-grow: 1;
+            border-bottom: 2px solid #DBE0E8;
+
+            &::-webkit-input-placeholder {
+                /* Chrome/Opera/Safari */
+                color: #8298B9;
+            }
+
+            &:-ms-input-placeholder {
+                /* Chrome/Opera/Safari */
+                color: #8298B9;
+            }
+
+            &::placeholder {
+                /* Chrome/Opera/Safari */
+                color: #8298B9;
+            }
+        }
+    }
+}

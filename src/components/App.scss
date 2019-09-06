@@ -1,4 +1,4 @@
-/*	Reset CSS	*/
+/*  Reset CSS   */
 button:focus {
     border: none;
     outline: 0 !important;
@@ -14,6 +14,7 @@ body {
     color: black;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 @font-face {
@@ -47,4 +48,36 @@ body {
     src: url('../fonts/Montserrat-Regular.otf');
     font-weight: normal;
     font-style: normal;
+}
+
+/*      ScrollBar       */
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 5px;
+    right: -6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(216, 216, 216, 0.3);
+    border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    opacity: 0.12;
+    background: rgba(0, 44, 113, 0.12);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 44, 113, 0.12);
+}
+
+.container__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
