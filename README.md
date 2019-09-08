@@ -1,7 +1,7 @@
 ## React ProfileApp
 <h5>To do</h5>
 <ul>
-	<li>A lot</li>
+	<li> a loooooot</li>
 </ul>
 ## Available Scripts
 
