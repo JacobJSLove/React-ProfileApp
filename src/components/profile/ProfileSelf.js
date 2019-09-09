@@ -11,26 +11,49 @@ class ProfileSelf extends React.Component {
         this.props.fetchProfile('1');
     }
     renderProfile = profile => {
-        if (profile) {
-            // add loading placeholder to img
-            // descruct profile ?
-            return (
-                <figure>
-                    <img alt={profile.name} width="70px" height="70px" src="https://i.pravatar.cc/70?img=12" />
-                </figure>
-            )
-        };
-        // <figcaption></figcaption>
-        // Need Loader gif/svg
-        return <figure>Loading...</figure>
+        // add loading placeholder to img
+        // descruct profile ?
+        // Static country ?
+        return (
+            <figure>
+                <img alt={profile.name} width="70px" height="70px" src="https://i.pravatar.cc/70?img=12" />
+                <figcaption>
+                <i className="share icon-export" aria-hidden="true">
+                    <span className="popup">www.mike-ross.com</span>
+                </i>
+                <div className="profile__header">
+                    <h5>{profile.name}</h5>
+                    <i className="like icon-heart-empty" aria-hidden="true" />
+                </div>
+                    <p>{profile.address.city}, USA</p>
+                </figcaption>
+            </figure>
+        )
+    }
 
+    renderSocial = () => {
+        return (
+            
+        )
     }
 
     render() {
+        // To do
+        // - safe input controled by react
+        // - social from api
         console.log(this.props.profile);
+        if (this.props.profile) {
+            return (
+                <section className="profile">
+                    {this.renderProfile(this.props.profile)}
+                    {this.renderSocial()}
+                </section>
+            )
+        }
+        // Need good Loader gif/svg
         return (
-            <section className="profile">
-                 {this.renderProfile(this.props)}
+            <section className="profile loading">
+                <h1>Loading...</h1>
             </section>
         )
     }

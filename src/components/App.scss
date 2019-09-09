@@ -17,6 +17,16 @@ body {
     font-size: 16px;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+
+}
+
 @font-face {
     font-family: 'fontello';
     src: url('../fonts/fontello.eot?');
@@ -48,6 +58,19 @@ body {
     src: url('../fonts/Montserrat-Regular.otf');
     font-weight: normal;
     font-style: normal;
+}
+
+
+.icon-heart-empty:before {
+    content: '\e800';
+}
+
+.icon-heart:before {
+    content: '\e801';
+}
+
+.icon-export:before {
+    content: '\e802';
 }
 
 /*      ScrollBar       */
