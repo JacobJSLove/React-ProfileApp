@@ -38,7 +38,7 @@
         }
 
         & .share {
-            font-size: 0.813em;
+            font-size: 0.75em;
             position: absolute;
             right: 0.750em;
             top: 0.750em;
@@ -76,19 +76,99 @@
 
     }
 
-
-
     & .popup {
-        display: none;
+        font-size: 16px;
+        color: black;
+        position: absolute;
+        left: 0;
+        top: -40px;
+        z-index: 999;
+        margin: 0;
+        padding: 10px 30px;
+        background: #fff;
+        color: #333;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #999;
+        text-decoration: none;
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.250em 0 0 0;
+        box-sizing: border-box;
+
+        & ul {
+            list-style-type: none;
+            margin: 0 1.5em 0 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-family: Montserrat;
+            width: 100%;
+
+            & li {
+                text-align: center;
+                position: relative;
+                width: 100%;
+                padding: 0 1.250em;
+
+                & span {
+                    font-size: 1.5em;
+                    color: #FFA640;
+                    font-weight: normal;
+                    letter-spacing: 0;
+                    margin: 0;
+                }
+
+                & p {
+                    font-size: 0.625em;
+                    color: #aab9d0;
+                    letter-spacing: 0;
+                    line-height: 1em;
+                    margin: 0;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 1px;
+                    background-color: #f4f4f4;
+                    left: 0;
+                    top: 0;
+                }
+
+                &:first-child::after {
+                    display: none;
+                }
+            }
+        }
+
+        & button {
+            padding: 15px 26px;
+            max-width: 140px;
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: #FFA640;
+            border-radius: 100px;
+            font-size: 0.875em;
+            box-sizing: border-box;
+            font-weight: bolder;
+            color: #FFFFFF;
+            letter-spacing: 0.263em;
+        }
     }
 }
 
 // To delete
-.loading {
-    & h1 {
-        color: #002C71;
-        font-family: Montserrat;
-        font-size: 1em;
-        font-weight: normal;
-    }
+.loading h1 {
+    color: #002C71;
+    font-family: Montserrat;
+    font-size: 1em;
+    font-weight: normal;
 }
