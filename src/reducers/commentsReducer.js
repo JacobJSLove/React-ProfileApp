@@ -1,14 +1,14 @@
 import {
-    FETCH_PROFILE
+    FETCH_COMMENTS
 } from '../actions/types';
 
 export default (state = [], action) => {
     switch (action.type) {
-        case FETCH_PROFILE:
+        case FETCH_COMMENTS:
             {
-                return [...state, action.payload];
+                return action.payload;
             }
         default:
             return state;
     }
-}
+};

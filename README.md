@@ -1,7 +1,8 @@
 ## React ProfileApp
 <h5>To do</h5>
 <ul>
-	<li> a loooooot</li>
+	<li> - on onter send comment </li>
+	<li> - tests </li>
 </ul>
 ## Available Scripts
 

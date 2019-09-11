@@ -5,8 +5,93 @@
     border-radius: 5px 5px 0 0;
     overflow: auto;
     display: flex;
+    font-family: Montserrat;
+    font-weight: normal;
     z-index: 1;
     flex-flow: column;
+    overflow: hidden;
+
+    &-more {
+        text-align: left;
+        font-size: 14px;
+        color: #FFA640;
+        box-sizing: border-box;
+        margin: 25px 0 25px 20px;
+        letter-spacing: 0;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    ul {
+        max-height: 456px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 0;
+        margin: 0 6px 6px 0;
+        box-sizing: border-box;
+
+        & li {
+            list-style-type: none;
+            display: flex;
+            padding: 20px 9px 25px 20px;
+            box-sizing: border-box;
+            position: relative;
+
+            & img {
+                object-fit: cover;
+                border-radius: 50%;
+                margin-right: 11px;
+            }
+
+            &:first-child::after {
+                display: none;
+            }
+
+            &::after {
+                content: '';
+                height: 2px;
+                width: auto;
+                background-color: #EBEBEB;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 90%;
+            }
+
+            & article {
+                font-family: Montserrat;
+                font-weight: normal;
+                padding-top: 10px;
+                overflow: hidden;
+
+                & header {
+                    display: flex;
+                    justify-content: space-between;
+
+                    & h5 {
+                        color: #002C71;
+                        letter-spacing: 0;
+                        font-size: 0.875em;
+                    }
+
+                    & .date {
+                        font-size: 0.875em;
+                        color: #002C71;
+                        opacity: 0.5;
+                        letter-spacing: 0;
+                    }
+                }
+
+                & p {
+                    font-size: 0.875em;
+                    margin: 1.5% 10% 0 0;
+                    color: #444444;
+                    letter-spacing: 0;
+                    line-height: 21px;
+                }
+            }
+        }
+    }
 
     &__input-wrapper {
         position: absolute;

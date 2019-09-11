@@ -15,6 +15,7 @@ const socialConfig = {
         false: 'like icon-heart-empty'
     }
 }
+
 const a = Math.floor(Math.random() * 9) + 1;
 
 class ProfileSelf extends React.Component {
@@ -23,7 +24,7 @@ class ProfileSelf extends React.Component {
         isLiked: false,
         isFallowed: false,
         likes: 354,
-        follows: 3,
+        follows: 301,
         following: 39,
         showModal: false
     }
@@ -34,13 +35,13 @@ class ProfileSelf extends React.Component {
     }
     // for now update only state not API
     onFallow = () => {
-        let status = this.state.follows + 1;
+        let status = this.state.following + 1;
         if (this.state.isFallowed) {
-            status = this.state.follows - 1;
+            status = this.state.following - 1;
         }
         this.setState(prevState => ({
             isFallowed: !prevState.isFallowed,
-            follows: status
+            following: status
         }))
     }
     onLike = () => {
@@ -69,9 +70,10 @@ class ProfileSelf extends React.Component {
         // descruct profile ?
         // Static country ?
         const className = socialConfig['isLiked'][this.state.isLiked];
+        let src = `https://i.pravatar.cc/70?img=${profile.id}`;
         return (
             <figure>
-                <img alt={profile.name} width="70px" height="70px" src='https://i.pravatar.cc/70' />
+                <img alt={profile.name} width="70px" height="70px" src={src} />
                 <figcaption>
                 <i onClick={this.onModalClick} className="share icon-export" aria-hidden="true">
                     { this.showModal(profile) }
@@ -105,6 +107,7 @@ class ProfileSelf extends React.Component {
         // To do
         // - safe input controled by react
         // - social from api
+        // - without array
         if (this.props.profile) {
             return (
                 <section className="profile">
@@ -125,7 +128,7 @@ class ProfileSelf extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        profile: state.profile[a]
+        profile: state.profile[0]
     };
 }
 
