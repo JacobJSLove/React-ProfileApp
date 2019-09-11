@@ -1,3 +1,5 @@
+@import "../mixin";
+
 .comments {
     margin-top: 1em;
     background: #FFFFFF;
@@ -7,7 +9,6 @@
     display: flex;
     font-family: Montserrat;
     font-weight: normal;
-    z-index: 1;
     flex-flow: column;
     overflow: hidden;
 
@@ -23,7 +24,7 @@
     }
 
     ul {
-        max-height: 456px;
+        height: 456px;
         overflow-x: hidden;
         overflow-y: scroll;
         padding: 0;
@@ -100,6 +101,8 @@
         box-sizing: border-box;
         box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.50);
         top: 100%;
+
+
 
         & input {
             margin: 1.625em 2.125em 1.625em 1.625em;
