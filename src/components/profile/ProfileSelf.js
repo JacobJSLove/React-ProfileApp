@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProfile } from '../../actions';
-
+import ImageLoader from './ImageLoader';
 
 // Self
 import './ProfileSelf.scss';
@@ -72,9 +72,10 @@ class ProfileSelf extends React.Component {
         // Static country ?
         const className = socialConfig['isLiked'][this.state.isLiked];
         let src = `https://i.pravatar.cc/70?img=${profile.id}`;
+
         return (
             <figure>
-                <img alt={profile.name} width="70px" height="70px" src={src} />
+                <ImageLoader alt={profile.name} width="70px" height="70px" src={src} />
                 <figcaption>
                 <i onClick={this.onModalClick} className="share icon-export" aria-hidden="true">
                     { this.showModal(profile) }
@@ -94,11 +95,21 @@ class ProfileSelf extends React.Component {
         const text = socialConfig['isFallowed'][this.state.isFallowed];
         return (
             <div className="profile__social">
-                <ul>
-                     <li><span>{this.state.likes}</span><p>Likes</p></li>
-                     <li><span>{this.state.follows}</span><p>Following</p></li>
-                     <li><span>{this.state.following}</span><p>Followers</p></li>
-                </ul>
+                <dl>
+                    <div>
+                        <dd>{this.state.likes}</dd>
+                        <dt>Likes</dt>
+                    </div>
+                    <div>
+                        <dd>{this.state.follows}</dd>
+                        <dt>Following</dt>
+                    </div>
+                    <div>
+                        <dd>{this.state.following}</dd>
+                        <dt>Followers</dt>
+                    </div>
+                </dl>
+
                 <button onClick={this.onFallow}>{text}</button>
             </div>
         )

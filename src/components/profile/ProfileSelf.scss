@@ -100,7 +100,7 @@
         padding: 1.250em 0 0 0;
         box-sizing: border-box;
 
-        & ul {
+        & dl {
             list-style-type: none;
             margin: 0 1.5em 0 0;
             padding: 0;
@@ -110,13 +110,13 @@
             font-family: Montserrat;
             width: 100%;
 
-            & li {
+            & div {
                 text-align: center;
                 position: relative;
                 width: 100%;
                 padding: 0 1.250em;
 
-                & span {
+                & dd {
                     font-size: 1.5em;
                     color: #FFA640;
                     font-weight: normal;
@@ -124,7 +124,7 @@
                     margin: 0;
                 }
 
-                & p {
+                & dt {
                     font-size: 0.625em;
                     color: #aab9d0;
                     letter-spacing: 0;

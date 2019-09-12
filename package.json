@@ -14,7 +14,8 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
     "redux-form": "^8.1.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reenhance-components": "^0.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
