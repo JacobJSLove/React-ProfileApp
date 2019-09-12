@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProfile } from '../../actions';
 
+
 // Self
 import './ProfileSelf.scss';
 

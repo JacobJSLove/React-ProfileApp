@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCommentsAndUsers } from '../../actions';
 import UserHeader from './UserHeader';
-import Image from "react-graceful-image";
 
 // Self
 import './ProfileComments.scss';
@@ -14,12 +13,12 @@ class ProfileComments extends React.Component {
     }
 
     renderComments() {
-        return this.props.comments.slice(0, 5).map(comment => {
+        return this.props.comments.slice(0, 99).map(comment => {
 
             let src = `https://i.pravatar.cc/70?img=${comment.userId}`;
             return (
                 <li key={comment.id}>
-                    <Image alt={comment.userId} width="40px" height="40px" src={src} />
+                    <img alt={comment.userId} width="40px" height="40px" src={src} />
                     <article>
                         <UserHeader userId={comment.userId} />
                         <p>{comment.body}</p>
