@@ -31,6 +31,10 @@
         margin: 0 6px 6px 0;
         box-sizing: border-box;
 
+        @include mQ($switch) {
+            height: 445px;
+        }
+
         & li {
             list-style-type: none;
             display: flex;

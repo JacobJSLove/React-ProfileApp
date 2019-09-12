@@ -77,12 +77,12 @@ class ProfileSelf extends React.Component {
             <figure>
                 <ImageLoader alt={profile.name} width="70px" height="70px" src={src} />
                 <figcaption>
-                <i onClick={this.onModalClick} className="share icon-export" aria-hidden="true">
+                <button onClick={this.onModalClick} className="share icon-export" aria-hidden="true">
                     { this.showModal(profile) }
-                </i>
+                </button>
                 <div className="profile__header">
                     <h5>{profile.name}</h5>
-                    <i onClick={this.onLike} className={className} aria-hidden="true" />
+                    <button onClick={this.onLike} className={className} aria-hidden="true" />
                 </div>
                     <p>{profile.address.city}, USA</p>
                 </figcaption>
