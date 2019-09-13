@@ -20,7 +20,7 @@ class ProfileComments extends React.Component {
             return (
                 <li key={comment.id}>
                     <div className="img__wrapper">
-                        <ImageLoader alt={comment.userId} width="40px" height="40px" src={src} />
+                        <ImageLoader key={comment.id} alt={comment.userId} width="40px" height="40px" src={src} />
                     </div>
                     <article>
                         <UserHeader userId={comment.userId} />

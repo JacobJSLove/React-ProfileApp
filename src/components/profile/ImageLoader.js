@@ -1,19 +1,14 @@
 import React from 'react';
-import { StateProvider, ObjectWatcher } from 'reenhance-components';
+import { StateProvider } from 'reenhance-components';
 const LoadedState = StateProvider(false);
-const ImageRefWatcher = ObjectWatcher(React.createRef());
 
 
 const ImageLoader = ({ src, alt, width, height }) => (
     <LoadedState>
     {({ state: loaded, setState: setLoaded }) => (
-      <ImageRefWatcher watch="current">
-        {(imageRef) => {
-          const complete = imageRef.current && imageRef.current.complete;
-          return (
-            <div>
-              {!complete ? (
-                <svg x="0px" y="0px" width={width} height={height} viewBox="0 0 53 53">
+      <div>
+        {!loaded ? (
+          <svg x="0px" y="0px" width={width} height={height} viewBox="0 0 53 53">
                   <path style={{fill: '#E7ECED'}}  d="M18.613,41.552l-7.907,4.313c-0.464,0.253-0.881,0.564-1.269,0.903C14.047,50.655,19.998,53,26.5,53
                   c6.454,0,12.367-2.31,16.964-6.144c-0.424-0.358-0.884-0.68-1.394-0.934l-8.467-4.233c-1.094-0.547-1.785-1.665-1.785-2.888v-3.322
                   c0.238-0.271,0.51-0.619,0.801-1.03c1.154-1.63,2.027-3.423,2.632-5.304c1.086-0.335,1.886-1.338,1.886-2.53v-3.546
@@ -29,18 +24,14 @@ const ImageLoader = ({ src, alt, width, height }) => (
                   c0.508,0.254,0.967,0.575,1.39,0.932c5.71-4.762,9.399-11.882,9.536-19.9C53.246,12.32,41.587,0.254,26.953,0.004z" />
                 </g>
             </svg>
-              ) : null}
-              <img
-                src={src}
-                alt={alt}
-                style={!complete ? { visibility: 'hidden' } : {}}
-                ref={imageRef}
-                onLoad={() => setLoaded(true)}
-                />
-            </div>
-          );
-        }}
-      </ImageRefWatcher>
+        ) : null}
+        <img
+          src={src}
+          alt={alt}
+          style={!loaded ? { visibility: 'hidden' } : {}}
+          onLoad={() => setLoaded(true)}
+        />
+      </div>
     )}
   </LoadedState>
 );

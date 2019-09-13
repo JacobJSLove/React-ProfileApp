@@ -67,7 +67,6 @@ class ProfileSelf extends React.Component {
     }
 
     renderProfile = profile => {
-        // add loading placeholder to img
         // descruct profile ?
         // Static country ?
         const className = socialConfig['isLiked'][this.state.isLiked];
@@ -118,8 +117,6 @@ class ProfileSelf extends React.Component {
     render() {
         // To do
         // - safe input controled by react
-        // - social from api
-        // - without array
         if (this.props.profile) {
             return (
                 <section className="profile">
@@ -128,7 +125,7 @@ class ProfileSelf extends React.Component {
                 </section>
             )
         }
-        // Need good Loader gif/svg
+        // Need good Loader gif/svg ??
         return (
             <section className="profile loading">
                 <h1>Loading...</h1>

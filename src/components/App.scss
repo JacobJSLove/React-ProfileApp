@@ -37,6 +37,7 @@ h5 {
         url('../fonts/fontello.svg?#fontello') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: fallback;
 }
 
 /* Use the following CSS code if you want to have a class per icon */
@@ -58,6 +59,7 @@ h5 {
     src: url('../fonts/Montserrat-Regular.otf');
     font-weight: normal;
     font-style: normal;
+    font-display: fallback;
 }
 
 
