@@ -4,9 +4,17 @@ import jsonProfile from '../api/jsonProfile';
 import _ from 'lodash';
 import {
     FETCH_PROFILE,
-    FETCH_COMMENTS
+    FETCH_COMMENTS,
+    POST_COMMENT
 } from './types';
 
+
+export const postComment = comment => {
+    return {
+        type: POST_COMMENT,
+        payload: comment
+    };
+};
 
 
 export const fetchCommentsAndUsers = () => async (dispatch, getState) => {
@@ -16,7 +24,9 @@ export const fetchCommentsAndUsers = () => async (dispatch, getState) => {
     _.chain(getState().comments)
         .map('userId') // map users
         .uniq() // only uniqe users
-        .forEach(id => dispatch(fetchProfile(id))) // call fetch to uniq users
+        .forEach(id => dispatch(
+            fetchProfile(id)
+        )) // call fetch to uniq users
         .value(); // Start chain
 };
 
@@ -24,7 +34,6 @@ export const fetchCommentsAndUsers = () => async (dispatch, getState) => {
 
 export const fetchProfile = (id) => async dispatch => {
     const response = await jsonProfile.get(`/users/${id}`);
-
     dispatch({
         type: FETCH_PROFILE,
         payload: response.data
@@ -32,12 +41,12 @@ export const fetchProfile = (id) => async dispatch => {
 };
 
 // to delete for experiment
-function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
+        [array[i], array[j]] = [array[j], array[i]];
     }
-    return a;
+    return array;
 }
 
 

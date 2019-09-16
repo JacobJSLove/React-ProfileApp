@@ -3,18 +3,27 @@ import { connect } from 'react-redux';
 import { fetchCommentsAndUsers } from '../../actions';
 import UserHeader from './UserHeader';
 import ImageLoader from './ImageLoader';
+import InputForm from './InputForm';
 
 // Self
 import './ProfileComments.scss';
 
+const text = {
+    true: 'Show comments',
+    false: 'Hide comments'
+};
 
 class ProfileComments extends React.Component {
+    state = {
+        hideComments: false
+    }
+
     componentDidMount() {
         this.props.fetchCommentsAndUsers();
     }
 
     renderComments() {
-        return this.props.comments.slice(0, 10).map(comment => {
+        return this.props.comments.slice(0, 4).map(comment => {
 
             let src = `https://i.pravatar.cc/70?img=${comment.userId}`;
             return (
@@ -31,16 +40,21 @@ class ProfileComments extends React.Component {
         })
     }
 
+    onHideClick = () => {
+        this.setState(prevState => ({
+            hideComments: !prevState.hideComments
+        }))
+    }
+
     render() {
         return (
             <section className="comments">
-                <p className="comments-more">Hide comments ({this.props.comments.length})</p>
-                <ul>
+                <p onClick = {this.onHideClick}
+                 className="comments-more">{text[this.state.hideComments]}({this.props.comments.length})</p>
+                <ul className = {`${this.state.hideComments}`}>
                   {this.renderComments()}
                 </ul>
-                <div className="comments__input-wrapper">
-                      <input type="text" placeholder="Add a comment" />
-                  </div>
+                <InputForm show={this.state.hideComments}/>
             </section>
         )
     }

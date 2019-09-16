@@ -17,7 +17,7 @@
         font-size: 14px;
         color: #FFA640;
         box-sizing: border-box;
-        margin: 25px 0 25px 20px;
+        margin: 25px 0 30px 20px;
         letter-spacing: 0;
         text-decoration: underline;
         cursor: pointer;
@@ -28,11 +28,21 @@
         overflow-x: hidden;
         overflow-y: scroll;
         padding: 0;
+        transition: height ease-out 0.5s;
+        will-change: height;
         margin: 0 6px 6px 0;
         box-sizing: border-box;
 
         @include mQ($switch) {
             height: 445px;
+        }
+
+        &.false {
+            height: 456px;
+        }
+
+        &.true {
+            height: 0;
         }
 
         & li {
@@ -75,6 +85,7 @@
             }
 
             & article {
+                width: 100%;
                 font-family: Montserrat;
                 font-weight: normal;
                 padding-top: 10px;
@@ -114,36 +125,43 @@
         display: flex;
         width: calc(100% - 2.5em);
         box-sizing: border-box;
+        transition: transform ease-out 0.5s 0.1s, opacity ease-in 0.5s, z-index 0s;
+        will-change: transform;
         box-shadow: 0 0 4px 0 rgba(172, 172, 172, 0.50);
         top: 100%;
 
 
-
-        & input {
-            margin: 1.625em 2.125em 1.625em 1.625em;
-            border: none;
-            font-family: Montserrat-Regular;
-            font-size: 1.125em;
-            color: #8298B9;
-            letter-spacing: 0;
-            outline: none;
+        & form {
+            margin: 1.8em 2.125em 1.8em 1.625em;
             flex-grow: 1;
-            border-bottom: 2px solid #DBE0E8;
 
-            &::-webkit-input-placeholder {
-                /* Chrome/Opera/Safari */
+            & input {
+                border: none;
+                font-family: Montserrat-Regular;
+                font-size: 1.125em;
                 color: #8298B9;
-            }
+                letter-spacing: 0;
+                outline: none;
+                width: 100%;
+                flex-grow: 1;
+                border-bottom: 2px solid #DBE0E8;
 
-            &:-ms-input-placeholder {
-                /* Chrome/Opera/Safari */
-                color: #8298B9;
-            }
+                &::-webkit-input-placeholder {
+                    /* Chrome/Opera/Safari */
+                    color: #8298B9;
+                }
 
-            &::placeholder {
-                /* Chrome/Opera/Safari */
-                color: #8298B9;
+                &:-ms-input-placeholder {
+                    /* Chrome/Opera/Safari */
+                    color: #8298B9;
+                }
+
+                &::placeholder {
+                    /* Chrome/Opera/Safari */
+                    color: #8298B9;
+                }
             }
         }
+
     }
 }

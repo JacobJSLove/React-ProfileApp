@@ -1,19 +1,13 @@
 import React from 'react';
+import Header from './Header';
 import { connect } from 'react-redux';
 
 class UserHeader extends React.Component {
     render() {
-        if (this.props.profile) {
-            let fakeDate = Math.floor(Math.random() * 30) + 1;
-            return (
-                <header>
-	                <h5>{this.props.profile.name}</h5>
-	                <span className="date">{ fakeDate }d</span>  
-                </header>
-            )
-        }
-        return <div>Loading...</div>
+        let fakeDate = Math.floor(Math.random() * 30) + 1;
+        return <Header profile={this.props.profile} date={fakeDate} />
     }
+
 }
 
 const mapStateToProps = (state, ownProps) => {

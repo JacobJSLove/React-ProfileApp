@@ -2,7 +2,7 @@ import React from 'react';
 import { StateProvider } from 'reenhance-components';
 const LoadedState = StateProvider(false);
 
-
+// Should be better
 const ImageLoader = ({ src, alt, width, height }) => (
     <LoadedState>
     {({ state: loaded, setState: setLoaded }) => (
