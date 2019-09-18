@@ -94,7 +94,7 @@ class ProfileSelf extends React.Component {
         const text = socialConfig['isFallowed'][this.state.isFallowed];
         return (
             <div className="profile__social">
-                <dl>
+                <dl data-test="Social-List">
                     <div>
                         <dd>{this.state.likes}</dd>
                         <dt>Likes</dt>

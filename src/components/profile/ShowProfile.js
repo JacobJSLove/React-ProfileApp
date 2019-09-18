@@ -11,7 +11,7 @@ const ShowProfile = () => {
     return (
         <div className="container">
 			<ProfileSelf />
-			<ProfileComments />
+			<ProfileComments counter='10' />
 		</div>
 
     )

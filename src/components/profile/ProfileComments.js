@@ -23,7 +23,7 @@ class ProfileComments extends React.Component {
     }
 
     renderComments() {
-        return this.props.comments.slice(0, 4).map(comment => {
+        return this.props.comments.slice(0, this.props.counter).map(comment => {
 
             let src = `https://i.pravatar.cc/70?img=${comment.userId}`;
             return (
@@ -33,7 +33,7 @@ class ProfileComments extends React.Component {
                     </div>
                     <article>
                         <UserHeader userId={comment.userId} />
-                        <p>{comment.body}</p>
+                        <p>{comment.title}</p>
                     </article>
                 </li>
             )

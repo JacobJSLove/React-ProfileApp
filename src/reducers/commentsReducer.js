@@ -12,9 +12,8 @@ export default (state = [], action) => {
         case POST_COMMENT:
             {
                 return [{
-                    body: action.payload.comment,
                     id: 101,
-                    title: "aliquid eos sed fuga est maxime repellendus",
+                    title: action.payload.comment,
                     userId: 1
                 }, ...state]
             }
