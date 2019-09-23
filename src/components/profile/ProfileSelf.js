@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProfile } from '../../actions';
 import ImageLoader from './ImageLoader';
+import PropTypes from 'prop-types';
 
 // Self
 import './ProfileSelf.scss';
@@ -133,6 +134,11 @@ class ProfileSelf extends React.Component {
         )
     }
 }
+
+
+ProfileSelf.propTypes = {
+    profile: PropTypes.object
+};
 
 
 const mapStateToProps = state => {
