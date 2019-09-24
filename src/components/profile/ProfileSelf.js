@@ -120,7 +120,7 @@ class ProfileSelf extends React.Component {
         // - safe input controled by react
         if (this.props.profile) {
             return (
-                <section className="profile">
+                <section className="profile" data-test="profileComponent">
                     {this.renderProfile(this.props.profile)}
                     {this.renderSocial()}
                 </section>

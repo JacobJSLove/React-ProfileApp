@@ -14,12 +14,6 @@ describe('fetchComments action', () => {
 
     it('Store is updated correctly', () => {
 
-        //         const expectedState = [{
-        //     title: 'Example title 1',
-        //     body: 'Some Text'
-        // }];
-
-
         const expectedState = [{
             id: 9,
             name: 'Glenna Reichert',
@@ -27,16 +21,6 @@ describe('fetchComments action', () => {
             email: 'Chaim_McDermott@dana.io',
         }, {
             id: 2,
-            name: 'Glenna Reichert',
-            username: 'Delphine',
-            email: 'Chaim_McDermott@dana.io',
-        }, {
-            id: 3,
-            name: 'Glenna Reichert',
-            username: 'Delphine',
-            email: 'Chaim_McDermott@dana.io',
-        }, {
-            id: 5,
             name: 'Glenna Reichert',
             username: 'Delphine',
             email: 'Chaim_McDermott@dana.io',

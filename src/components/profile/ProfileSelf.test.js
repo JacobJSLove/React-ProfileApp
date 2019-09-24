@@ -4,7 +4,11 @@ import { findByTestAtrr, checkProps, testStore } from './../../../utils';
 
 import ProfileSelf from './ProfileSelf';
 
-
+const setUp = (initialState = {}) => {
+    const store = testStore(initialState);
+    const wrapper = shallow(<ProfileSelf store={store}/>).childAt(0).dive();
+    return wrapper;
+}
 
 describe('ProfileSelf Component', () => {
 
@@ -19,5 +23,32 @@ describe('ProfileSelf Component', () => {
         });
 
     });
+    describe('Validating Component', () => {
+        let wrapper;
+        beforeEach(() => {
+            const initialState = {
+                profile: [{
+                    id: 4,
+                    name: 'Patricia Lebsack',
+                    username: 'Karianne',
+                    email: 'Julianne.OConner@kory.org',
+                    address: {
+                        street: 'Hoeger Mall',
+                        suite: 'Apt. 692',
+                        city: 'South Elvis'
+                    }
+                }]
+            };
+            wrapper = setUp(initialState);
+        })
+
+
+        it('Should render without errors', () => {
+            const component = findByTestAtrr(wrapper, 'profileComponent');
+            expect(component.length).toBe(1);
+        })
+
+    });
+
 
 });
