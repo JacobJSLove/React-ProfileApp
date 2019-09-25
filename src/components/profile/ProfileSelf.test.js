@@ -56,6 +56,12 @@ describe('ProfileSelf Component', () => {
             button.simulate('click');
             expect(findByTestAtrr(wrapper, 'socialLikes').text()).toEqual('355');
         })
+        it('description', () => {
+            const classInstance = wrapper.instance();
+            classInstance.onModalClick();
+            const newState = classInstance.state.showModal;
+            expect(newState).toBe(true);
+        })
 
     });
 

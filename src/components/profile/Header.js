@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Header = props => {
     if (props.profile) {
@@ -12,5 +13,8 @@ const Header = props => {
     return <div>Loading...</div>
 }
 
-
+Header.propTypes = {
+    profile: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object, PropTypes.array])),
+    date: PropTypes.number
+};
 export default Header;
