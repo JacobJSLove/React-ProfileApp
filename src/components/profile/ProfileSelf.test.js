@@ -47,6 +47,15 @@ describe('ProfileSelf Component', () => {
             const component = findByTestAtrr(wrapper, 'profileComponent');
             expect(component.length).toBe(1);
         })
+        it('Should render static likes without errors', () => {
+            const component = findByTestAtrr(wrapper, 'socialLikes');
+            expect(component.text()).toEqual('354');
+        })
+        it('On Click should update likes', () => {
+            const button = findByTestAtrr(wrapper, 'onLike');
+            button.simulate('click');
+            expect(findByTestAtrr(wrapper, 'socialLikes').text()).toEqual('355');
+        })
 
     });
 

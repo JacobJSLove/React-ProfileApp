@@ -14,7 +14,7 @@ class InputForm extends React.Component {
 
     render() {
         return (
-            <div data-test="InputComponent" className = { `comments__input-wrapper ${this.props.show}` } >
+            <div data-test="inputForm" className = { `comments__input-wrapper ${this.props.show}` } >
                 <ProfileForm onSubmit={this.onSubmit} initialValues={{ placeholder: "Add a comment" }} />
             </div>
         );
@@ -22,9 +22,10 @@ class InputForm extends React.Component {
 
 }
 
-// ProfileSelf.propTypes = {
-//     profile: PropTypes.object
-// };
+InputForm.propTypes = {
+    comment: PropTypes.object,
+    show: PropTypes.bool
+};
 
 export default connect(null, {
     postComment

@@ -1,7 +1,7 @@
 ## React ProfileApp
 <h5>To do</h5>
 <ul>
-	<li> tests actions </li>
+	<li> Something new </li>
 </ul>
 ## Available Scripts
 

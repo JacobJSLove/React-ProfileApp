@@ -13,31 +13,41 @@ const setUp = (initialState = {}, props = {}) => {
 
 describe('InputForm Component', () => {
     let wrapper;
-
-    describe('Checking PropTypes', () => {
-        beforeEach(() => {
-            const initialState = {};
-            wrapper = setUp(initialState);
-        });
-        it('Should not throw a warning ', () => {
-            // const expectedProps = {
-            //     profile: { test: 'abc' }
-            // };
-            // const propsErr = checkProps(InputForm, expectedProps);
-            // expect(propsErr).toBeUndefined();
-        });
-
+    beforeEach(() => {
+        const initialState = {
+            form: {
+                commentForm: {
+                    values: {
+                        placeholder: 'Add a comment',
+                        comment: 'abc'
+                    },
+                    initial: {
+                        placeholder: 'Add a comment'
+                    },
+                    registeredFields: {
+                        comment: {
+                            name: 'comment',
+                            type: 'Field',
+                            count: 1
+                        }
+                    },
+                    fields: {
+                        comment: {
+                            visited: true,
+                            touched: true
+                        }
+                    },
+                    anyTouched: true
+                }
+            }
+        };
+        const props = {};
+        wrapper = setUp(initialState, props);
     });
-
     describe('Renders', () => {
-        beforeEach(() => {
-            const initialState = {};
-            const props = {};
-            wrapper = setUp(initialState, props);
-        });
-        it('Should render input form', () => {
-            const Input = findByTestAtrr(wrapper, 'InputComponent');
-            expect(Input.length).toBe(1);
+        it('Renders without errors', () => {
+            const component = findByTestAtrr(wrapper, 'inputForm');
+            expect(component.length).toBe(1);
         })
 
     });

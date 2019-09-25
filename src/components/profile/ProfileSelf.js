@@ -82,7 +82,7 @@ class ProfileSelf extends React.Component {
                 </button>
                 <div className="profile__header">
                     <h5>{profile.name}</h5>
-                    <button onClick={this.onLike} className={className} aria-hidden="true" />
+                    <button data-test="onLike" onClick={this.onLike} className={className} aria-hidden="true" />
                 </div>
                     <p>{profile.address.city}, USA</p>
                 </figcaption>
@@ -97,7 +97,7 @@ class ProfileSelf extends React.Component {
             <div className="profile__social">
                 <dl data-test="Social-List">
                     <div>
-                        <dd>{this.state.likes}</dd>
+                        <dd data-test='socialLikes'>{this.state.likes}</dd>
                         <dt>Likes</dt>
                     </div>
                     <div>

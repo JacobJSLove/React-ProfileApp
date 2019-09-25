@@ -7,6 +7,7 @@ class ProfileForm extends React.Component {
             }
 
             onSubmit = ({ comment }) => {
+                console.log({ comment });
                 this.props.onSubmit({ comment });
             }
 
@@ -31,6 +32,6 @@ class ProfileForm extends React.Component {
         };
 
         export default reduxForm({
-            form: 'ProfileForm',
+            form: 'commentForm',
             validate
         })(ProfileForm);
