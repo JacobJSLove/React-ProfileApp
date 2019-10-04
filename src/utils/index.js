@@ -1,7 +1,7 @@
 import checkPropTypes from 'check-prop-types';
 import { applyMiddleware, createStore } from 'redux';
-import reducers from './../src/reducers';
-import { middlewares } from './../src/createStore';
+import reducers from './../reducers';
+import { middlewares } from './../createStore';
 
 
 export const findByTestAtrr = (component, attr) => {
@@ -10,7 +10,7 @@ export const findByTestAtrr = (component, attr) => {
 };
 
 export const checkProps = (component, expectedProps) => {
-    const propsErr = checkPropTypes(component.propTypes, expectedProps, 'props', component.name);
+    const propsErr = checkPropTypes(component.propTypes, expectedProps, 'props', component.name); // eslint-disable-line
     return propsErr;
 }
 

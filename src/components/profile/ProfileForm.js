@@ -7,7 +7,6 @@ class ProfileForm extends React.Component {
             }
 
             onSubmit = ({ comment }) => {
-                console.log({ comment });
                 this.props.onSubmit({ comment });
             }
 

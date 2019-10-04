@@ -3,9 +3,18 @@ import { StateProvider } from 'reenhance-components';
 const LoadedState = StateProvider(false);
 
 // Should be better
-const ImageLoader = ({ src, alt, width, height }) => (
-    <LoadedState>
-    {({ state: loaded, setState: setLoaded }) => (
+//= ({ mobile, tablet, src, alt, width, height }) => 
+class ImageLoader extends React.Component {
+    render() {
+
+        let { alt, height, mobile, src, tablet, width } = this.props;
+        src = require(`./../../${this.props.src}`);
+        mobile = require(`./../../${this.props.mobile}`);
+        tablet = require(`./../../${this.props.tablet}`);
+        return (
+            <LoadedState>
+    {         
+      ({ state: loaded, setState: setLoaded }) => (
       <div>
         {!loaded ? (
           <svg x="0px" y="0px" width={width} height={height} viewBox="0 0 53 53">
@@ -27,14 +36,24 @@ const ImageLoader = ({ src, alt, width, height }) => (
         ) : null}
         <img
           src={src}
+          sizes="(max-width: 1500px) 33vw, 40vw"
+          srcSet={`${mobile} 1000w,
+           ${tablet} 1300w,
+           ${src} 2000w`}
           alt={alt}
+          width='70px'
+          height='70px'
           style={!loaded ? { visibility: 'hidden' } : {}}
-          onLoad={() => setLoaded(true)}
+          onLoad={() => {
+            setLoaded(true);
+          }}
         />
       </div>
     )}
   </LoadedState>
-);
+        )
+    }
+};
 
 
 export default ImageLoader;

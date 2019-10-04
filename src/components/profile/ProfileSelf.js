@@ -71,11 +71,12 @@ class ProfileSelf extends React.Component {
         // descruct profile ?
         // Static country ?
         const className = socialConfig['isLiked'][this.state.isLiked];
-        let src = `https://i.pravatar.cc/70?img=${profile.id}`;
-
+        let mobile = `data/img/${profile.id}/${profile.id}_m.jpg`;
+        let tablet = `data/img/${profile.id}/${profile.id}_t.jpg`;
+        let src = `data/img/${profile.id}/${profile.id}.jpg`;
         return (
             <figure>
-                <ImageLoader alt={profile.name} width="70px" height="70px" src={src} />
+                <ImageLoader alt={profile.name} width="70px" height="70px" mobile={mobile} tablet={tablet} src={src} />
                 <figcaption>
                 <button onClick={this.onModalClick} className="share icon-export" aria-hidden="true">
                     { this.showModal(profile) }

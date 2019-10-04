@@ -24,12 +24,13 @@ class ProfileComments extends React.Component {
 
     renderComments() {
         return this.props.comments.slice(0, this.props.counter).map(comment => {
-
-            let src = `https://i.pravatar.cc/70?img=${comment.userId}`;
+            let mobile = `data/img/${comment.userId}/${comment.userId}_m.jpg`;
+            let tablet = `data/img/${comment.userId}/${comment.userId}_t.jpg`;
+            let src = `data/img/${comment.userId}/${comment.userId}.jpg`;
             return (
                 <li key={comment.id}>
                     <div className="img__wrapper">
-                        <ImageLoader key={comment.id} alt={comment.userId} width="40px" height="40px" src={src} />
+                        <ImageLoader key={comment.id} alt={comment.userId} width="40px" height="40px" mobile={mobile} tablet={tablet} src={src} />
                     </div>
                     <article>
                         <UserHeader userId={comment.userId} />

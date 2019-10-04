@@ -1,6 +1,6 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import { findByTestAtrr, checkProps, testStore } from './../../../utils';
+import { shallow } from 'enzyme';
+import { findByTestAtrr, checkProps, testStore } from './../../utils';
 
 import ProfileSelf from './ProfileSelf';
 

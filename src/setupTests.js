@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 

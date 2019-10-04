@@ -1,5 +1,5 @@
 import moxios from "moxios";
-import { testStore } from './../../utils';
+import { testStore } from './../utils';
 import { fetchComments, postComment } from './../actions';
 import jsonProfile from '../api/jsonProfile';
 
